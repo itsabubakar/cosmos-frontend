@@ -27,7 +27,7 @@ body {
 }
 
 .slick-dots li {
-  osition: relative;
+  position: relative;
   display: inline-block;
   /* width: 20px; */
   height: 20px;
@@ -35,3 +35,47 @@ body {
   padding: 0;
   cursor: pointer;
 }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px; /* Adjust gap as needed */
+}
+
+/* First child: top-left rounded */
+.grid-container > div:nth-child(1) {
+  border-radius: 15px 0 0 0; /* Top-left */
+}
+
+/* Second child: top-right rounded */
+.grid-container > div:nth-child(2) {
+  border-radius: 0 15px 0 0; /* Top-right */
+}
+
+/* Third child: bottom-left rounded */
+.grid-container > div:nth-child(3) {
+  border-radius: 0 0 0 15px; /* Bottom-left */
+}
+
+/* Fourth child: bottom-right rounded */
+.grid-container > div:nth-child(4) {
+  border-radius: 0 0 15px 0px; /* Bottom-right */
+}
+
+.link-container > div:first-child {
+  margin-left: 40px; /* Adds 20px margin to the left of the first element */
+}
+
+.link-container > div:last-child {
+  margin-right: 40px; /* Adds 20px margin to the left of the first element */
+}
+
+.custom-image-gallery .image-gallery-slide img {
+  height: 200px; /* Set your desired height */
+  object-fit: cover; /* Maintain aspect ratio */
+}
+
+/* .nuka-overflow {
+  touch-action: auto !important;
+  
+} */
