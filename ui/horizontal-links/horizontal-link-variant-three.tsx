@@ -43,7 +43,7 @@ const HorizontalLinkVariantThree = ({
           <p className="text-[#08B02D] text-[13px]">Deal</p>
         </div>
 
-        <div className="absolute top-0 -right-5 bg-white/30 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.1)] text-xs rounded-full p-2">
+        <div className="absolute top-0  bg-[#FFFFFF99] right-2  shadow-[0_4px_30px_rgba(0,0,0,0.1)] text-xs rounded-full p-2">
           <Heart />
         </div>
       </Link>

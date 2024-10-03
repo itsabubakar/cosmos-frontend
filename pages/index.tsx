@@ -252,121 +252,35 @@ export default function Home() {
           </p>
         </Section>
         <Section className="pb-4" variant="two">
-          <Slider ref={sliderRef} {...settings}>
-            {/* Render slides */}
-            <div className="px-4">
-              <ProductCard
-                bg="bg-[#F6F05F]"
-                heading="New & exclusive collab"
-                title="Midwest Teen"
-                subtitle="Collection"
-                buttonText="Shop now"
-                src={BlackShirt}
-              />
-              <ProductCard
-                bg="bg-[#FFD700]"
-                heading="Fab prices"
-                title="Wardrobe"
-                subtitle="refresh"
-                buttonText="Shop now"
-                src={ShoppingWoman}
-                text="was 25,000 now 18,000"
-              />
-              <ProductCard
-                largerImage
-                bg="bg-[#F6F05F]"
-                bgTwo="bg-[#F0F0F0DE]"
-                buttonText="Shop now"
-                src={Computer}
-                text="Shop for Computers 
+          {/* Render slides */}
+          <div className="px-4">
+            <ProductCard
+              bg="bg-[#F6F05F]"
+              heading="New & exclusive collab"
+              title="Midwest Teen"
+              subtitle="Collection"
+              buttonText="Shop now"
+              src={BlackShirt}
+            />
+            <ProductCard
+              bg="bg-[#FFD700]"
+              heading="Fab prices"
+              title="Wardrobe"
+              subtitle="refresh"
+              buttonText="Shop now"
+              src={ShoppingWoman}
+              text="was 25,000 now 18,000"
+            />
+            <ProductCard
+              largerImage
+              bg="bg-[#F6F05F]"
+              bgTwo="bg-[#F0F0F0DE]"
+              buttonText="Shop now"
+              src={Computer}
+              text="Shop for Computers 
 & Accessories"
-              />
-            </div>
-            <div className="px-4">
-              <ProductCard
-                bg="bg-[#F6F05F]"
-                heading="New & exclusive collab"
-                title="Midwest Teen"
-                subtitle="Collection"
-                buttonText="Shop now"
-                src={BlackShirt}
-              />
-              <ProductCard
-                bg="bg-[#FFD700]"
-                heading="Fab prices"
-                title="Wardrobe"
-                subtitle="refresh"
-                buttonText="Shop now"
-                src={ShoppingWoman}
-                text="was 25,000 now 18,000"
-              />
-              <ProductCard
-                largerImage
-                bg="bg-[#F6F05F]"
-                bgTwo="bg-[#F0F0F0DE]"
-                buttonText="Shop now"
-                src={Computer}
-                text="Shop for Computers 
-& Accessories"
-              />
-            </div>
-            <div className="px-4">
-              <ProductCard
-                bg="bg-[#F6F05F]"
-                heading="New & exclusive collab"
-                title="Midwest Teen"
-                subtitle="Collection"
-                buttonText="Shop now"
-                src={BlackShirt}
-              />
-              <ProductCard
-                bg="bg-[#FFD700]"
-                heading="Fab prices"
-                title="Wardrobe"
-                subtitle="refresh"
-                buttonText="Shop now"
-                src={ShoppingWoman}
-                text="was 25,000 now 18,000"
-              />
-              <ProductCard
-                largerImage
-                bg="bg-[#F6F05F]"
-                bgTwo="bg-[#F0F0F0DE]"
-                buttonText="Shop now"
-                src={Computer}
-                text="Shop for Computers 
-& Accessories"
-              />
-            </div>
-            <div className="px-4">
-              <ProductCard
-                bg="bg-[#F6F05F]"
-                heading="New & exclusive collab"
-                title="Midwest Teen"
-                subtitle="Collection"
-                buttonText="Shop now"
-                src={BlackShirt}
-              />
-              <ProductCard
-                bg="bg-[#FFD700]"
-                heading="Fab prices"
-                title="Wardrobe"
-                subtitle="refresh"
-                buttonText="Shop now"
-                src={ShoppingWoman}
-                text="was 25,000 now 18,000"
-              />
-              <ProductCard
-                largerImage
-                bg="bg-[#F6F05F]"
-                bgTwo="bg-[#F0F0F0DE]"
-                buttonText="Shop now"
-                src={Computer}
-                text="Shop for Computers 
-& Accessories"
-              />
-            </div>
-          </Slider>
+            />
+          </div>
         </Section>
         <Section heading="Massive savings for you">
           <div className="px-3 pt-3  grid-container">
