@@ -17,6 +17,12 @@ import {
   CouchThree,
   CouchTwo,
   Cream,
+  DepartmentFive,
+  DepartmentFour,
+  DepartmentOne,
+  DepartmentSix,
+  DepartmentThree,
+  DepartmentTwo,
   Doctor,
   Earpods,
   Eateries,
@@ -1105,6 +1111,37 @@ internationally"
         </Section>
         <section className="pb-5">
           <Image src={Meds} alt="" />
+        </section>
+        <section className="px-5">
+          <h3 className="font-semibold">Explore Departments</h3>
+
+          <div className="grid grid-cols-2 gap-x-4 gap-y-1 mt-2">
+            <div>
+              <Image className="w-full" src={DepartmentOne} alt="" />
+              <p className="pt-4">Home & kitchen</p>
+            </div>
+            <div>
+              <Image className="w-full" src={DepartmentTwo} alt="" />
+              <p className="pt-4">Beauty</p>
+            </div>
+            <div>
+              <Image className="w-full" src={DepartmentThree} alt="" />
+              <p className="pt-4">Groceries</p>
+            </div>
+            <div>
+              <Image className="w-full" src={DepartmentFour} alt="" />
+              <p className="pt-4">Electronics</p>
+            </div>
+            <div>
+              <Image className="w-full" src={DepartmentFive} alt="" />
+              <p className="pt-4">Sports & outdoors</p>
+            </div>
+            <div>
+              <Image className="w-full" src={DepartmentSix} alt="" />
+              <p className="pt-4">Medical</p>
+            </div>
+          </div>
+          <h3 className="text-blue-500 mt-2">All Departments</h3>
         </section>
       </main>
     </div>
