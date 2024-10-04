@@ -38,12 +38,12 @@ const ProductSliderFour = ({ autoPlay, imgSrc, title }: Props) => {
       />
 
       {/* Custom Title*/}
-      <div className="py-2">
+      <div className="py-2 bg-white rounded-lg">
         <p className="text-sm text-center">{title}</p>
       </div>
 
       {/* Custom Pagination */}
-      <div className="flex  justify-center pb-2">
+      <div className="flex  justify-center ">
         {images.map((_, index) => (
           <div
             key={index}

@@ -79,3 +79,7 @@ body {
   touch-action: auto !important;
   
 } */
+
+.dashed-bottoms div:not(1) {
+  border-top: 1px dashed; /* Adjust this value as needed */
+}

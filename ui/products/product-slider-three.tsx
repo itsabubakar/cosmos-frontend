@@ -30,7 +30,7 @@ const ProductSliderThree = ({ imgSrc, productImage }: Props) => {
         <Image
           src={productImage}
           alt="Product"
-          className="w-full h-full object-cover rounded-lg"
+          className="w-full h-full object-cover  rounded-t-lg"
         />
 
         {/* Play Button (Centered) */}
@@ -77,7 +77,7 @@ const ProductSliderThree = ({ imgSrc, productImage }: Props) => {
                 className={`w-5 h-[2px] mx-1 ${
                   currentIndex === index
                     ? true
-                      ? "bg-yellow-500" // Yellow dot when autoPlay is true
+                      ? "bg-black" // Yellow dot when autoPlay is true
                       : "bg-black" // Black dot when autoPlay is false
                     : "bg-gray-300"
                 }`}
@@ -86,7 +86,7 @@ const ProductSliderThree = ({ imgSrc, productImage }: Props) => {
           </div>
 
           {/* Add to Cart Button */}
-          <button className="bg-[#FED813] p-1 text-[10px] w-full rounded-2xl mt-3">
+          <button className="bg-[#FED813] px-1 py-2 text-[10px] w-full rounded-2xl mt-3">
             Add to cart
           </button>
         </div>

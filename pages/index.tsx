@@ -1,5 +1,5 @@
 import { AuthSection, Hero, Section } from "@/components";
-import { Arrow } from "@/public/assets/icons";
+import { Arrow, BlackStar, Care, CartPlus, Eye } from "@/public/assets/icons";
 import {
   Apple,
   BeautyFour,
@@ -87,7 +87,7 @@ import {
   ProductSliderThree,
   ProductSliderTwo,
 } from "@/ui";
-import HorizontalLink from "@/ui/horizontal-links/horizontal-link-variant-one";
+// import HorizontalLink from "@/ui/horizontal-links/horizontal-link-variant-one";
 import localFont from "next/font/local";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
@@ -146,8 +146,47 @@ export default function Home() {
       </div>
     );
   };
+
+  const HorizontalLinkSlickWear = ({
+    link,
+    title,
+    src,
+  }: {
+    link: string;
+    title: string;
+    src: StaticImageData;
+  }) => {
+    return (
+      <Link
+        className="text-[#000000CC] w-[148px] bg-white/80 backdrop-blur-sm rounded-lg inline-block relative mx-1 ml-2"
+        href={link}
+      >
+        <div className="absolute top-1 right-1 bg-[#FFFFFF33] rounded-full pl-2 pt-2">
+          <CartPlus />
+        </div>
+        <div className="p-1 flex justify-center">
+          <Image
+            alt={title}
+            src={src}
+            width={130}
+            height={136}
+            className="object-cover "
+          />
+        </div>
+        <p className="pt-1 text-[14px] px-1 font-semibold pb-1">{title}</p>
+        <p className="text-xs px-1 pb-2">Olevs Luxury Shirt...</p>
+        <BlackStar />
+        <div className="flex mt-2 justify-between items-center bg-[#FFFFFF8C] rounded-b-lg p-1">
+          <p className="flex items-start font-semibold">
+            <span className="text-xs font-light">N </span>5,000
+          </p>
+          <Eye />
+        </div>
+      </Link>
+    );
+  };
   return (
-    <div className={`${geistSans.variable} ${geistMono.variable}`}>
+    <div className={`font-inter`}>
       <main className="w-full relative">
         <Hero />
         <AuthSection />
@@ -208,6 +247,7 @@ export default function Home() {
             View your browsing history
           </p>
         </Section>
+
         <Section heading="Shop by department / category">
           <div className="flex gap-x-5  overflow-x-auto whitespace-nowrap h-[280px]  pt-8  link-container pb-4">
             <HorizontalLinkVariantTwo
@@ -257,6 +297,7 @@ export default function Home() {
             </span>
           </p>
         </Section>
+
         <Section className="pb-4" variant="two">
           {/* Render slides */}
           <div className="px-4">
@@ -290,10 +331,10 @@ export default function Home() {
         </Section>
         <Section heading="Massive savings for you">
           <div className="px-3 pt-3  grid-container">
-            <ProductSliderTwo imgSrc={[Laptop, Laptop]} />
-            <ProductSliderTwo imgSrc={[Apple, Apple]} autoPlay />
-            <ProductSliderTwo imgSrc={[Scan, Scan]} />
-            <ProductSliderTwo imgSrc={[Earpods, Earpods]} />
+            <ProductSliderTwo imgSrc={[Laptop, Laptop, Laptop]} />
+            <ProductSliderTwo imgSrc={[Apple, Apple, Laptop]} autoPlay />
+            <ProductSliderTwo imgSrc={[Scan, Scan, Earpods]} />
+            <ProductSliderTwo imgSrc={[Earpods, Earpods, Laptop, Apple]} />
           </div>
           <p className="text-xs font-semibold pt-5 pb-4 flex items-center  gap-x-2 px-5">
             See all deals
@@ -421,7 +462,7 @@ export default function Home() {
           </div>
         </Section>
         <Section heading="Massive savings for you">
-          <div className="px-3 pt-3  grid-container">
+          <div className="px-3 pt-3 grid gap-2 grid-cols-2">
             <ProductSliderTwo imgSrc={[Laptop, Laptop]} />
             <ProductSliderTwo showNewTag imgSrc={[Apple, Apple]} autoPlay />
             <ProductSliderTwo imgSrc={[Scan, Scan]} />
@@ -495,65 +536,75 @@ export default function Home() {
 trends"
           variant="two"
         >
-          <Slider className="m-4" ref={sliderRef} {...settings}>
-            <div className="px-1">
-              <ProductCardTwo
-                price="200"
-                title="Cosmos Basics Kellogs crunchy nuts
-Double pack"
-                imgSrc={Apple}
-              />
-              <ProductCardTwo
-                price="200"
-                title="Sony Playstation 4 slim 1TB with 2 controlers"
-                imgSrc={Apple}
-              />
-              <ProductCardTwo
-                price="200"
-                title="Cosmos Basics Kellogs crunchy nuts
-Double pack"
-                imgSrc={Apple}
-              />
+          <Slider className="" ref={sliderRef} {...settings}>
+            <div className="px-5">
+              <div>
+                <ProductCardTwo
+                  price="200"
+                  title="Omega Sea master, Oyster perpetual date just."
+                  imgSrc={Apple}
+                />
+              </div>
+              <div className="border-t border-dashed ">
+                <ProductCardTwo
+                  price="200"
+                  title="Omega Sea master, Oyster perpetual date just."
+                  imgSrc={Apple}
+                />
+              </div>
+              <div className="border-t border-dashed ">
+                <ProductCardTwo
+                  price="200"
+                  title="Omega Sea master, Oyster perpetual date just."
+                  imgSrc={Apple}
+                />
+              </div>
             </div>
-            <div className="px-1">
-              <ProductCardTwo
-                price="200"
-                title="Cosmos Basics Kellogs crunchy nuts
-Double pack"
-                imgSrc={Apple}
-              />
-              <ProductCardTwo
-                price="200"
-                title="Cosmos Basics Kellogs crunchy nuts
-Double pack"
-                imgSrc={Apple}
-              />
-              <ProductCardTwo
-                price="200"
-                title="Cosmos Basics Kellogs crunchy nuts
-Double pack"
-                imgSrc={Apple}
-              />
+            <div className="px-5">
+              <div>
+                <ProductCardTwo
+                  price="200"
+                  title="Omega Sea master, Oyster perpetual date just."
+                  imgSrc={Apple}
+                />
+              </div>
+              <div className="border-t border-dashed ">
+                <ProductCardTwo
+                  price="200"
+                  title="Omega Sea master, Oyster perpetual date just."
+                  imgSrc={Apple}
+                />
+              </div>
+              <div className="border-t border-dashed ">
+                <ProductCardTwo
+                  price="200"
+                  title="Omega Sea master, Oyster perpetual date just."
+                  imgSrc={Apple}
+                />
+              </div>
             </div>
-            <div className="px-1">
-              <ProductCardTwo
-                price="200"
-                title="Cosmos Basics Kellogs crunchy nuts
-Double pack"
-                imgSrc={Apple}
-              />
-              <ProductCardTwo
-                price="200"
-                title="Cosmos Basics Kellogs crunchy nuts
-Double pack"
-                imgSrc={Apple}
-              />
-              <ProductCardTwo
-                price="200"
-                title="Cosmos Basics Kellogs crunchy nuts
-Double pack"
-                imgSrc={Apple}
-              />
+            <div className="px-5">
+              <div>
+                <ProductCardTwo
+                  price="200"
+                  title="Omega Sea master, Oyster perpetual date just."
+                  imgSrc={Apple}
+                />
+              </div>
+              <div className="border-t border-dashed ">
+                <ProductCardTwo
+                  price="200"
+                  title="Omega Sea master, Oyster perpetual date just."
+                  imgSrc={Apple}
+                />
+              </div>
+              <div className="border-t border-dashed ">
+                <ProductCardTwo
+                  price="200"
+                  title="Omega Sea master, Oyster perpetual date just."
+                  imgSrc={Apple}
+                />
+              </div>
             </div>
           </Slider>
           <div className="mb-10"></div>
@@ -562,7 +613,7 @@ Double pack"
           heading="Deals inspired by your recent 
 history"
         >
-          <div className="px-3 pt-3  grid-container">
+          <div className="px-3 pt-3  grid gap-x-3 gap-y-3 grid-cols-2">
             <ProductSliderTwo imgSrc={[Laptop, Laptop]} />
             <ProductSliderTwo showNewTag imgSrc={[Apple, Apple]} autoPlay />
             <ProductSliderTwo imgSrc={[Scan, Scan]} />
@@ -616,69 +667,92 @@ history"
             </div>
           </Slider>
         </section>
+
         <Section heading="Top picks for Nigeria" variant="two">
-          <Slider className="mx-4 mb-10 pt-4" ref={sliderRef} {...settings}>
-            <div className="px-1">
-              <ProductCardTwo
-                price="200"
-                title="Omega Sea master, Oyster perpetual date just."
-                imgSrc={Apple}
-              />
-              <ProductCardTwo
-                price="200"
-                title="Black polo long sleeve shirt, XL, L, M."
-                imgSrc={Apple}
-              />
-              <ProductCardTwo
-                price="200"
-                title="Samsung Galaxy S24 Ultra. Jet black, space gray, Gold"
-                imgSrc={Apple}
-              />
+          <Slider className=" mb-10 pt-4 " ref={sliderRef} {...settings}>
+            <div className="px-5 ">
+              <div>
+                <ProductCardTwo
+                  price="200"
+                  title="Omega Sea master, Oyster perpetual date just."
+                  imgSrc={Apple}
+                />
+              </div>
+              <div className="border-t border-dashed ">
+                <ProductCardTwo
+                  price="200"
+                  title="Omega Sea master, Oyster perpetual date just."
+                  imgSrc={Apple}
+                />
+              </div>
+              <div className="border-t border-dashed ">
+                <ProductCardTwo
+                  price="200"
+                  title="Omega Sea master, Oyster perpetual date just."
+                  imgSrc={Apple}
+                />
+              </div>
             </div>
-            <div className="px-1">
-              <ProductCardTwo
-                price="200"
-                title="Cosmos Basics Kellogs crunchy nuts
-Double pack"
-                imgSrc={Apple}
-              />
-              <ProductCardTwo
-                price="200"
-                title="Cosmos Basics Kellogs crunchy nuts
-Double pack"
-                imgSrc={Apple}
-              />
-              <ProductCardTwo
-                price="200"
-                title="Cosmos Basics Kellogs crunchy nuts
-Double pack"
-                imgSrc={Apple}
-              />
+            <div className="px-5">
+              <div>
+                <ProductCardTwo
+                  price="200"
+                  title="Omega Sea master, Oyster perpetual date just."
+                  imgSrc={Apple}
+                />
+              </div>
+              <div className="border-t border-dashed ">
+                <ProductCardTwo
+                  price="200"
+                  title="Omega Sea master, Oyster perpetual date just."
+                  imgSrc={Apple}
+                />
+              </div>
+              <div className="border-t border-dashed ">
+                <ProductCardTwo
+                  price="200"
+                  title="Omega Sea master, Oyster perpetual date just."
+                  imgSrc={Apple}
+                />
+              </div>
             </div>
-            <div className="min-w-[300px]">
-              <ProductCardTwo
-                price="200"
-                title="Cosmos Basics Kellogs crunchy nuts
-Double pack"
-                imgSrc={Apple}
-              />
-              <ProductCardTwo
-                price="200"
-                title="Cosmos Basics Kellogs crunchy nuts
-Double pack"
-                imgSrc={Apple}
-              />
-              <ProductCardTwo
-                price="200"
-                title="Cosmos Basics Kellogs crunchy nuts
-Double pack"
-                imgSrc={Apple}
-              />
+            <div className="px-5">
+              <div>
+                <ProductCardTwo
+                  price="200"
+                  title="Omega Sea master, Oyster perpetual date just."
+                  imgSrc={Apple}
+                />
+              </div>
+              <div className="border-t border-dashed ">
+                <ProductCardTwo
+                  price="200"
+                  title="Omega Sea master, Oyster perpetual date just."
+                  imgSrc={Apple}
+                />
+              </div>
+              <div className="border-t border-dashed ">
+                <ProductCardTwo
+                  price="200"
+                  title="Omega Sea master, Oyster perpetual date just."
+                  imgSrc={Apple}
+                />
+              </div>
             </div>
           </Slider>
         </Section>
-        <Section heading="Apparel under 5,000">
-          <div className="mx-3 mt-3 rounded-lg  grid grid-cols-2 gap-2 border">
+
+        <Section className="relative" heading="Apparel under 5,000">
+          <Link
+            href={"/"}
+            className="bg-[#72727240] text-[9px] absolute top-40  -right-[63px] text-white -rotate-90 w-fit z-10 justify-between flex rounded-t-md  px-3  items-center"
+          >
+            <p className="text-white font-semibold pr-3">HOW MAY I HELP YOU</p>
+            <span className="rotate-90 ">
+              <Care fill="white" />
+            </span>
+          </Link>
+          <div className="mx-3 mt-3 rounded-lg  grid grid-cols-2 gap-2 border ">
             <ProductSliderFIve title="Mens" imgSrc={[Suit, Suit]} />
             <ProductSliderFIve title="Womens" imgSrc={[Suit, Suit]} autoPlay />
             <ProductSliderFIve title="Kiddies" imgSrc={[Suit, Suit]} />
@@ -691,7 +765,16 @@ Double pack"
             </span>
           </p>
         </Section>
-        <Section heading="Shoes under 8,000">
+        <Section className="relative" heading="Shoes under 8,000">
+          <Link
+            href={"/"}
+            className="bg-[#72727240] text-[9px] absolute top-40  -right-[63px] text-white -rotate-90 w-fit z-10 justify-between flex rounded-t-md  px-3  items-center"
+          >
+            <p className="text-white font-semibold pr-3">HOW MAY I HELP YOU</p>
+            <span className="rotate-90 ">
+              <Care fill="white" />
+            </span>
+          </Link>
           <div className="mx-3 mt-3 rounded-lg  grid grid-cols-2 gap-2 border">
             <ProductSliderFour title="For Her" imgSrc={[Suit, Suit]} />
             <ProductSliderFour title="For Him" imgSrc={[Suit, Suit]} autoPlay />
@@ -1018,7 +1101,7 @@ Double pack"
               <p className="bg-[#08B02D] absolute  text-white font-semibold p-1 rounded-t-sm rounded-bl-sm rounded-br-lg">
                 46% off
               </p>
-              <p className="">Limited time Deal</p>
+              <p className="ml-14 text-green-500">Limited time Deal</p>
             </div>
             <div className="flex items-center gap-x-2">
               <p className="text-lg font-semibold flex items-start pt-2">
@@ -1079,13 +1162,37 @@ internationally"
             <Image alt="bg" src={CosmosSlick} />
             <div className="absolute bottom-0 w-full">
               <div className="overflow-x-auto whitespace-nowrap link-container  py-4 scrollbar-none">
-                <HorizontalLink title={"Rolex"} src={Watch} link="/" />
-                <HorizontalLink title={"Rolex"} src={Doctor} link="/" />
-                <HorizontalLink title={"Rolex"} src={Doctor} link="/" />
-                <HorizontalLink title={"Rolex"} src={Doctor} link="/" />
-                <HorizontalLink title={"Rolex"} src={Doctor} link="/" />
-                <HorizontalLink title={"Rolex"} src={Doctor} link="/" />
-                <HorizontalLink title={"Rolex"} src={Doctor} link="/" />
+                <HorizontalLinkSlickWear title={"Rolex"} src={Watch} link="/" />
+                <HorizontalLinkSlickWear
+                  title={"Rolex"}
+                  src={Doctor}
+                  link="/"
+                />
+                <HorizontalLinkSlickWear
+                  title={"Rolex"}
+                  src={Doctor}
+                  link="/"
+                />
+                <HorizontalLinkSlickWear
+                  title={"Rolex"}
+                  src={Doctor}
+                  link="/"
+                />
+                <HorizontalLinkSlickWear
+                  title={"Rolex"}
+                  src={Doctor}
+                  link="/"
+                />
+                <HorizontalLinkSlickWear
+                  title={"Rolex"}
+                  src={Doctor}
+                  link="/"
+                />
+                <HorizontalLinkSlickWear
+                  title={"Rolex"}
+                  src={Doctor}
+                  link="/"
+                />
               </div>
             </div>
           </div>

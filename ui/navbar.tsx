@@ -21,7 +21,7 @@ import {
 } from "@/public/assets/images";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 // NavLink Component
 const NavLink = ({
@@ -46,6 +46,20 @@ const NavLink = ({
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Track scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      // Change state if scrolled more than 150px
+      setIsScrolled(window.scrollY > 150);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   // Menu toggle function
   const toggleMenu = () => {
@@ -54,12 +68,12 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-20 pt-2 px-4 text-sm shadow-md rounded-b-xl ${
-        isOpen ? "" : "bg-white/80 backdrop-blur-sm"
+      className={`fixed top-0 left-0 w-full z-20 pt-2 text-sm shadow-md rounded-b-xl transition-colors duration-300 ease-in-out ${
+        isScrolled ? "bg-white backdrop-blur-sm" : "bg-yellow-300"
       }`}
     >
       {/* Logo */}
-      <div className={`${isOpen ? "hidden" : ""} flex items-center gap-4`}>
+      <div className={`${isOpen ? "hidden" : ""} px-4 flex items-center gap-4`}>
         <div>
           <Link href="/">
             <Logo />
@@ -83,13 +97,10 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className={`pl-1 pt-4 ${isOpen ? "hidden" : ""}`}>
+      <div className={`px-5 pt-4 ${isOpen ? "hidden" : ""}`}>
         {/* Mobile Menu Icon */}
         <div className="flex justify-between items-center">
-          <button
-            onClick={toggleMenu} // This should be the correct button to toggle menu
-            className="focus:outline-none"
-          >
+          <button onClick={toggleMenu} className="focus:outline-none">
             <Open />
           </button>
 
@@ -101,7 +112,7 @@ const Navbar = () => {
             <input
               type="text"
               placeholder="Search Cosmos"
-              className="outline-none w-[110px] text-xs  py-2  bg-transparent no-underline"
+              className="outline-none w-[110px] text-xs py-2 bg-transparent no-underline"
             />
             <Microscope />
           </div>
@@ -110,7 +121,7 @@ const Navbar = () => {
 
       {/* Horizontally scrolling links */}
       <div
-        className={`overflow-x-auto whitespace-nowrap flex space-x-5 py-4 scrollbar-none ${
+        className={`overflow-x-auto whitespace-nowrap flex space-x-5 py-4 scrollbar-none px-5 ${
           isOpen ? "hidden" : ""
         }`}
       >
@@ -148,7 +159,7 @@ const Navbar = () => {
 
       {/* Full-screen Mobile Menu */}
       <div
-        className={`fixed h-screen bg-[#FFFFFF33] backdrop-blur-[28px] inset-0 z-30 flex flex-col space-y-4 transition-transform transition-opacity duration-300 ease-in-out ${
+        className={`px-4 fixed h-screen bg-[#FFFFFF33] backdrop-blur-[28px] inset-0 z-30 flex flex-col space-y-4 transition-transform transition-opacity duration-300 ease-in-out ${
           isOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
         }`}
       >
@@ -189,7 +200,7 @@ const Navbar = () => {
             </div>
             <div className="bg-[#020202B2] absolute top-0 right-0 h-full p-4 rounded-tl-full">
               <button
-                onClick={toggleMenu} // Ensure this also closes the menu
+                onClick={toggleMenu}
                 className="text-gray-700 hover:text-blue-500 focus:outline-none mt-10"
               >
                 <Close />

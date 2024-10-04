@@ -12,11 +12,15 @@ const HorizontalLinkVariantFour = ({
   subtitle: string;
 }) => {
   return (
-    <div className="">
+    <div className="min-w-[244px]">
       {/* Video Ad Section */}
       <div className="relative ">
         {/* Product Image */}
-        <Image src={img} alt="Product" className="w-full h-full object-cover" />
+        <Image
+          src={img}
+          alt="Product"
+          className="w-full h-[154px] object-cover"
+        />
 
         {/* Play Button (Centered) */}
         <div className="absolute  inset-0 flex items-center justify-center">

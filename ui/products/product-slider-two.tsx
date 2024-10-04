@@ -23,10 +23,10 @@ const ProductSliderTwo = ({ autoPlay, imgSrc, showNewTag }: Props) => {
   };
 
   return (
-    <div className="relative text-center bg-white shadow p-2">
+    <div className="relative text-center bg-white shadow rounded-xl p-2">
       {/* "New" Tag - Optional */}
       {showNewTag && (
-        <div className="absolute top-0 left-0 bg-[#878F8780] text-white text-[10px]  p-1 rounded-sm z-10">
+        <div className="absolute top-0 left-0 bg-[#878F8780] text-white text-[10px]  p-1 rounded-sm rounded-tl-xl rounded-br-xl z-10">
           New
         </div>
       )}

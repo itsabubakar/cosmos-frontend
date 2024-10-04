@@ -34,7 +34,7 @@ const Hero = () => {
   }) => {
     return (
       <Link
-        className="text-[#000000CC] w-[139px] px-1 py-1   bg-[#FFFFFF8C] backdrop-blur-[10px] rounded-lg inline-block mx-1 h-[175px]"
+        className="text-[#000000CC] w-[139px] px-1 py-2   bg-[#FFFFFF8C] backdrop-blur-[10px] rounded-lg inline-block mx-1 h-[175px]"
         href={link}
       >
         <p className="text-center text-[13px] font-medium pb-1">{title}</p>
@@ -153,7 +153,7 @@ const Hero = () => {
       <div>
         {/* Autoplay Toggle Button */}
         <button
-          className="bottom-[216px] right-[30%] p-2 absolute text-white rounded-md"
+          className="bottom-[216px] right-[25%] p-2 absolute text-white rounded-md"
           onClick={toggleAutoplay} // Toggle autoplay state
         >
           <svg

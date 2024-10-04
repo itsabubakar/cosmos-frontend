@@ -24,7 +24,7 @@ const HorizontalLink = ({
         height={136}
         className="object-cover rounded-t-2xl"
       />
-      <div className="border-x border-b rounded-b-xl">
+      <div className="border-x border-b pt-3 -mt-3 rounded-b-xl">
         <p className="text-center text-[12px] font-medium pb-1 pt-2">{title}</p>
         <p className="text-center text-[11px] ">1 viewed</p>
       </div>
