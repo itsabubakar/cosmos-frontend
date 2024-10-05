@@ -13,7 +13,9 @@ const AuthSection = () => {
         Sign in <Person width="14" />
       </Link>
 
-      <Link href={"/"}>Create an account</Link>
+      <Link className="bg-[#0E5767]" href={"/"}>
+        Create an account
+      </Link>
     </div>
   );
 };

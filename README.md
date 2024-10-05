@@ -20,8 +20,16 @@
 - [x] Swiping on horizontal nav shows padding
 - [x] Add right fonts
 - [x] Make navbar stick when swiped
-- [] Screen should not move when navbar is active
-- []
-- []
-- []
+- [x] Screen should not move when navbar is active
+- [] Reduce spacing in items with heart
+- [] Make navbar scroll back after 2 seconds when user scroll uo
+- [] I think this indicator should be changed to the dots, to make it uniform big slider
+- [x] review navbar on slide
+- [] add border radius on navbar mini
+- [x] center play button
+- [] explore departments text center all departments, reduce spacing
 - [] Round slide indicator
+- [] Review cosmos slick slider images, space naira sign, add blur effect
+- [] Based on recent shopping trends princes left
+- [] Review shooes and aparel under 8k
+- []

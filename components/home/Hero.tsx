@@ -155,7 +155,7 @@ const Hero = () => {
       <div>
         {/* Autoplay Toggle Button */}
         <button
-          className="bottom-[216px] right-[25%] p-2 absolute text-white rounded-md"
+          className="bottom-[218px] right-[25%] p-2 absolute text-white rounded-md"
           onClick={toggleAutoplay} // Toggle autoplay state
         >
           {autoplay ? <Pause /> : <PlayIcon />}

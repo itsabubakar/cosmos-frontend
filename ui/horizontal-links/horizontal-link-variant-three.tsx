@@ -24,7 +24,7 @@ const HorizontalLinkVariantThree = ({
     <div className="flex flex-col items-centers">
       {/* Top Link */}
       <Link
-        className="text-[#000000CC] mb-2  inline-block relative border-b px-7"
+        className="text-[#000000CC] mb-2  inline-block relative border-b px-4"
         href={topLink.link}
       >
         <div className="h-[105px]">
@@ -50,7 +50,7 @@ const HorizontalLinkVariantThree = ({
 
       {/* Bottom Link */}
       <Link
-        className="text-[#000000CC] inline-block  relative  mt-10 px-7"
+        className="text-[#000000CC] inline-block  relative  mt-10 px-4"
         href={bottomLink.link}
       >
         <div className="h-[105px]">

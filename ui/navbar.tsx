@@ -221,12 +221,12 @@ const Navbar = () => {
 
         {/* Full-screen Mobile Menu */}
         <div
-          className={`fixed min-h-screen bg-[#FFFFFF33] backdrop-blur-[28px] inset-0 z-30 flex flex-col space-y-4 transition-transform transition-opacity duration-300 ease-in-out  ${
+          className={`fixed  min-h-screen bg-[#FFFFFF33] backdrop-blur-[28px] inset-0 z-30 flex flex-col space-y-4 transition-transform transition-opacity duration-300 ease-in-out  ${
             isOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
           } overflow-y-auto overflow-x-hidden`} // Changed to min-h-screen here
         >
-          <div className="flex flex-col min-h-screen ">
-            <div className="bg-[#FFFFFF99] px-4 shadow-md rounded-br-full w-4/5 p-4">
+          <div className="flex flex-col min-h-screen  ">
+            <div className="bg-[#FFFFFF99] px-4 shadow-md rounded-br-full w-4/5 p-4 ">
               <div className="flex justify-between">
                 <div>
                   <h2 className="pl-1 font-semibold">Browse</h2>
@@ -247,9 +247,9 @@ const Navbar = () => {
                 Cosmos Home
               </Link>
             </div>
-            <div className="flex justify-between  px-4 pt-5 overflow-auto grow">
+            <div className="flex justify-between  px-4  overflow-auto grow">
               <div className="space-y-2 flex flex-col  justify-between scrollbar-none overflow-y-auto">
-                <h3 className="font-semibold">Trending</h3>
+                <h3 className="font-semibold mt-5">Trending</h3>
                 <NavLink text="Movers & shakers" href="/" icon={Ring} />
                 <h3 className="font-semibold pt-2">Top Departments</h3>
 
