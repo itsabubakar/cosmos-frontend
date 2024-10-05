@@ -20,3 +20,4 @@ export { default as Mute } from "./mute";
 export { default as CartPlus } from "./cart-plus";
 export { default as BlackStar } from "./black-star";
 export { default as Microphone } from "./microphone";
+export { default as PlayIcon } from "./play";

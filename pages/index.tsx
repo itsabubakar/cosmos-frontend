@@ -88,22 +88,10 @@ import {
   ProductSliderTwo,
 } from "@/ui";
 // import HorizontalLink from "@/ui/horizontal-links/horizontal-link-variant-one";
-import localFont from "next/font/local";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 import Slider from "react-slick";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
 
 export default function Home() {
   const sliderRef = useRef<Slider | null>(null);
@@ -190,6 +178,7 @@ export default function Home() {
       <main className="w-full relative">
         <Hero />
         <AuthSection />
+
         <Section heading="Based on your recent shopping trends">
           <div className="px-3 pt-3  grid-container">
             <ProductSlider

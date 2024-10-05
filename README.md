@@ -19,7 +19,7 @@
 - [x] Turn small slider on big card grAY
 - [x] Swiping on horizontal nav shows padding
 - [x] Add right fonts
-- [] Make navbar stick when swiped
+- [x] Make navbar stick when swiped
 - [] Screen should not move when navbar is active
 - []
 - []
