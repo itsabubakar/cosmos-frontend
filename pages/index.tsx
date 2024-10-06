@@ -1138,9 +1138,9 @@ history"
             </div>
             <div className="flex items-center gap-x-2">
               <p className="text-lg font-semibold flex items-start pt-2">
-                <span className="text-xs font-thin">N</span>160,000
+                <span className="text-xs font-thin pt-[2px]">N</span>160,000
               </p>
-              <p className="text-[10px]">
+              <p className="text-[10px] pt-2.5">
                 List price: <span className="line-through">N 175, 000</span>
               </p>
             </div>
