@@ -14,22 +14,22 @@
 - [x] Limited time deal slide indicators should be golden
 - [x] Slider with play button sizing fix
 - [x] Remove corner radius on image with big play on it
-- [] Review images on hero, check size and positioning
 - [x] Fix green details button width and space the "limited time deal text" on Big tv
 - [x] Turn small slider on big card grAY
 - [x] Swiping on horizontal nav shows padding
 - [x] Add right fonts
 - [x] Make navbar stick when swiped
 - [x] Screen should not move when navbar is active
-- [] Reduce spacing in items with heart
-- [] Make navbar scroll back after 2 seconds when user scroll uo
-- [] I think this indicator should be changed to the dots, to make it uniform big slider
+- [x] Reduce spacing in items with heart
+- [x] Make navbar scroll back after 2 seconds when user scroll uo
+- [x] I think this indicator should be changed to the dots, to make it uniform big slider
 - [x] review navbar on slide
-- [] add border radius on navbar mini
+- [x] add border radius on navbar mini
 - [x] center play button
-- [] explore departments text center all departments, reduce spacing
-- [] Round slide indicator
-- [] Review cosmos slick slider images, space naira sign, add blur effect
-- [] Based on recent shopping trends princes left
-- [] Review shooes and aparel under 8k
+- [x] explore departments text center all departments, reduce spacing
+- [x] Review cosmos slick slider images, space naira sign, add blur effect
+- [x] Based on recent shopping trends princes left
+- [x] Review shooes and aparel under 8k
+- [] Review images on hero, check size and positioning
 - []
+- [] Round slide indicator

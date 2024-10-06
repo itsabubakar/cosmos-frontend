@@ -56,7 +56,7 @@ const OnScrollHeader = ({
     <div
       className={`${
         isOpen && "hidden"
-      } fixed top-0 left-0 w-full z-50 bg-white py-2 shadow-md flex  items-center px-4`}
+      } fixed top-0 left-0 w-full z-50 bg-white rounded-b-xl py-2 shadow-md flex  items-center px-4`}
     >
       <button onClick={toggleMenu} className="focus:outline-none">
         <Open />
@@ -67,7 +67,7 @@ const OnScrollHeader = ({
       </Link>
 
       {/* Cart and Profile Icons */}
-      <div className="flex items-center justify-center gap-4 ml-auto">
+      <div className="flex gap-x-6 items-center justify-center  ml-auto">
         <Link href="/">
           <Bag />
         </Link>
@@ -85,17 +85,56 @@ const Navbar = () => {
   const [showOnScrollHeader, setShowOnScrollHeader] = useState(false);
 
   // Track scroll position
-  // Track scroll position
   useEffect(() => {
+    let lastScrollY = window.scrollY;
+    let timeoutId: ReturnType<typeof setTimeout> | null = null;
+
     const handleScroll = () => {
-      const scrolled = window.scrollY > 150;
-      setIsScrolled(scrolled);
-      setShowOnScrollHeader(window.scrollY > 146); // Show header after 146px scroll
+      const currentScrollY = window.scrollY;
+      const scrolledDown = currentScrollY > lastScrollY;
+      const past150px = currentScrollY > 150;
+
+      if (past150px && scrolledDown) {
+        // User has scrolled past 150px and is scrolling down
+        setIsScrolled(true); // Show smaller navbar immediately
+        setShowOnScrollHeader(true);
+
+        // Clear any existing timeout when scrolling down
+        if (timeoutId) {
+          clearTimeout(timeoutId);
+          timeoutId = null;
+        }
+      } else if (!scrolledDown) {
+        // User is scrolling back up
+        // If the user is still past 150px, add a delay before showing the main navbar
+        if (past150px && !timeoutId) {
+          timeoutId = setTimeout(() => {
+            setIsScrolled(false); // Show main navbar after delay
+            setShowOnScrollHeader(false);
+            timeoutId = null; // Reset the timeoutId
+          }, 1000); // 1-second delay
+        }
+
+        // If the user scrolls up to the top (below 150px), remove the delay and show the main navbar immediately
+        if (!past150px) {
+          if (timeoutId) {
+            clearTimeout(timeoutId);
+            timeoutId = null;
+          }
+          setIsScrolled(false); // Show main navbar
+          setShowOnScrollHeader(false);
+        }
+      }
+
+      lastScrollY = currentScrollY;
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      if (timeoutId) {
+        clearTimeout(timeoutId); // Clear timeout on cleanup
+      }
     };
   }, []);
 
@@ -167,7 +206,7 @@ const Navbar = () => {
             </button>
 
             {/* Search bar */}
-            <div className="rounded bg-white px-2 shadow-md border flex justify-between items-center w-[286px]">
+            <div className="rounded-xl bg-white px-4 py-2 shadow-md border flex justify-between items-center w-[286px]">
               <div className="">
                 <Microphone />
               </div>

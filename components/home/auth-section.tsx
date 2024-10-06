@@ -13,7 +13,7 @@ const AuthSection = () => {
         Sign in <Person width="14" />
       </Link>
 
-      <Link className="bg-[#0E5767]" href={"/"}>
+      <Link className="text-[#0E5767]" href={"/"}>
         Create an account
       </Link>
     </div>

@@ -44,7 +44,7 @@ const ProductSlider = ({ title, autoPlay, price, imgSrc }: Props) => {
       {/* Custom Title and Price */}
       <h3 className="text-xs text-[#393939] pt-4 pl-2 pb-1">{title}</h3>
       <p className="text-lg font-medium flex flex-row gap-1 pl-2">
-        <span className="text-xs font-light">N </span> {price}
+        <span className="text-xs font-light pt-[2px]">N </span> {price}
       </p>
 
       {/* Custom Pagination */}

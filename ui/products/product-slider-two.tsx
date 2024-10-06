@@ -52,7 +52,7 @@ const ProductSliderTwo = ({ autoPlay, imgSrc, showNewTag }: Props) => {
         <p className="absolute left-0 bg-[#08B02D] text-white w-[50px] font-semibold p-1 rounded-t-sm rounded-bl-sm rounded-br-lg">
           46% off
         </p>
-        <p className="mx-auto text-[#08B02D] font-medium pl-4">
+        <p className="mx-auto text-[#08B02D] font-medium ml-14">
           Limited time Deal
         </p>
       </div>

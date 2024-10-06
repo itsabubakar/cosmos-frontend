@@ -54,6 +54,7 @@ import {
   Man,
   Meds,
   Pampers,
+  PicOne,
   Reebok,
   Scan,
   Shopping,
@@ -90,11 +91,13 @@ import {
 // import HorizontalLink from "@/ui/horizontal-links/horizontal-link-variant-one";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import { useRef } from "react";
+import { SetStateAction, useRef, useState } from "react";
 import Slider from "react-slick";
 
 export default function Home() {
   const sliderRef = useRef<Slider | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0); // Track active slide index
+
   const settings = {
     dots: true,
     infinite: true,
@@ -106,6 +109,33 @@ export default function Home() {
     arrows: false,
     autoplay: false, // Use autoplay state to control autoplay
     autoplaySpeed: 1000,
+  };
+
+  const toysSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    fade: false,
+    waitForAnimate: true,
+    arrows: false,
+    autoplay: false, // Use autoplay state to control autoplay
+    autoplaySpeed: 1000,
+    // Update activeIndex before slide change
+    beforeChange: (current: unknown, next: SetStateAction<number>) =>
+      setActiveIndex(next),
+
+    customPaging: (i: number) => (
+      <div className=" items-center flex justify-center -mt-10">
+        {/* Use Dot component with custom props based on active state */}
+        {activeIndex === i ? (
+          <div className="w-2 h-2 bg-blue-500 border  border-gray-500 rounded-full"></div>
+        ) : (
+          <div className="w-2 h-2 bg-white border border-gray-500 rounded-full"></div>
+        )}
+      </div>
+    ),
   };
   const HorizontalLinkVariant = ({
     src,
@@ -146,27 +176,21 @@ export default function Home() {
   }) => {
     return (
       <Link
-        className="text-[#000000CC] w-[148px] bg-white/80 backdrop-blur-sm rounded-lg inline-block relative mx-1 ml-2"
+        className="text-[#000000CC] w-[148px] bg-white/20 backdrop-blur-[8px] rounded-lg inline-block relative mx-1 ml-2"
         href={link}
       >
         <div className="absolute top-1 right-1 bg-[#FFFFFF33] rounded-full pl-2 pt-2">
           <CartPlus />
         </div>
-        <div className="p-1 flex justify-center">
-          <Image
-            alt={title}
-            src={src}
-            width={130}
-            height={136}
-            className="object-cover "
-          />
+        <div className="py-2 flex justify-center min-w-[149px]">
+          <Image alt={title} src={src} height={136} className="object-cover " />
         </div>
         <p className="pt-1 text-[14px] px-1 font-semibold pb-1">{title}</p>
         <p className="text-xs px-1 pb-2">Olevs Luxury Shirt...</p>
         <BlackStar />
-        <div className="flex mt-2 justify-between items-center bg-[#FFFFFF8C] rounded-b-lg p-1">
+        <div className="flex   mt-2 justify-between items-center backdrop-blur-[18px]  bg-[#FFFFFF80] rounded-b-lg p-1 ">
           <p className="flex items-start font-semibold">
-            <span className="text-xs font-light">N </span>5,000
+            <span className="text-xs font-light pr-1 pt-[2px]">N </span>5,000
           </p>
           <Eye />
         </div>
@@ -742,10 +766,14 @@ history"
             </span>
           </Link>
           <div className="mx-3 mt-3 rounded-lg  grid grid-cols-2 gap-2 border ">
-            <ProductSliderFIve title="Mens" imgSrc={[Suit, Suit]} />
-            <ProductSliderFIve title="Womens" imgSrc={[Suit, Suit]} autoPlay />
-            <ProductSliderFIve title="Kiddies" imgSrc={[Suit, Suit]} />
-            <ProductSliderFIve title="Kiddies" imgSrc={[Suit, Suit]} />
+            <ProductSliderFIve title="Mens" imgSrc={[PicOne, PicOne]} />
+            <ProductSliderFIve
+              title="Womens"
+              imgSrc={[PicOne, PicOne]}
+              autoPlay
+            />
+            <ProductSliderFIve title="Kiddies" imgSrc={[PicOne, PicOne]} />
+            <ProductSliderFIve title="Kiddies" imgSrc={[PicOne, PicOne]} />
           </div>
           <p className="text-xs font-semibold pt-5 pb-4 flex items-center  gap-x-2 px-5">
             See all deals
@@ -765,10 +793,14 @@ history"
             </span>
           </Link>
           <div className="mx-3 mt-3 rounded-lg  grid grid-cols-2 gap-2 border">
-            <ProductSliderFour title="For Her" imgSrc={[Suit, Suit]} />
-            <ProductSliderFour title="For Him" imgSrc={[Suit, Suit]} autoPlay />
-            <ProductSliderFour title="Teens" imgSrc={[Suit, Suit]} />
-            <ProductSliderFour title="Kiddies" imgSrc={[Suit, Suit]} />
+            <ProductSliderFour title="For Her" imgSrc={[PicOne, PicOne]} />
+            <ProductSliderFour
+              title="For Him"
+              imgSrc={[PicOne, PicOne]}
+              autoPlay
+            />
+            <ProductSliderFour title="Teens" imgSrc={[PicOne, PicOne]} />
+            <ProductSliderFour title="Kiddies" imgSrc={[PicOne, PicOne]} />
           </div>
           <p className="text-xs font-semibold pt-5 pb-4 flex items-center  gap-x-2 px-5">
             See all deals
@@ -1023,63 +1055,75 @@ history"
           </p>
         </Section>
         <Section heading="Popular products in beauty" variant="two">
-          <Slider className="mx-4 mb-10 pt-4" ref={sliderRef} {...settings}>
-            <div className="px-1">
-              <ProductCardTwo
-                price="200"
-                title="Omega Sea master, Oyster perpetual date just."
-                imgSrc={Apple}
-              />
-              <ProductCardTwo
-                price="200"
-                title="Black polo long sleeve shirt, XL, L, M."
-                imgSrc={Apple}
-              />
-              <ProductCardTwo
-                price="200"
-                title="Samsung Galaxy S24 Ultra. Jet black, space gray, Gold"
-                imgSrc={Apple}
-              />
+          <Slider className=" mb-10 pt-4 " ref={sliderRef} {...settings}>
+            <div className="px-5 ">
+              <div>
+                <ProductCardTwo
+                  price="200"
+                  title="Omega Sea master, Oyster perpetual date just."
+                  imgSrc={Apple}
+                />
+              </div>
+              <div className="border-t border-dashed ">
+                <ProductCardTwo
+                  price="200"
+                  title="Omega Sea master, Oyster perpetual date just."
+                  imgSrc={Apple}
+                />
+              </div>
+              <div className="border-t border-dashed ">
+                <ProductCardTwo
+                  price="200"
+                  title="Omega Sea master, Oyster perpetual date just."
+                  imgSrc={Apple}
+                />
+              </div>
             </div>
-            <div className="px-1">
-              <ProductCardTwo
-                price="200"
-                title="Cosmos Basics Kellogs crunchy nuts
-Double pack"
-                imgSrc={Apple}
-              />
-              <ProductCardTwo
-                price="200"
-                title="Cosmos Basics Kellogs crunchy nuts
-Double pack"
-                imgSrc={Apple}
-              />
-              <ProductCardTwo
-                price="200"
-                title="Cosmos Basics Kellogs crunchy nuts
-Double pack"
-                imgSrc={Apple}
-              />
+            <div className="px-5">
+              <div>
+                <ProductCardTwo
+                  price="200"
+                  title="Omega Sea master, Oyster perpetual date just."
+                  imgSrc={Apple}
+                />
+              </div>
+              <div className="border-t border-dashed ">
+                <ProductCardTwo
+                  price="200"
+                  title="Omega Sea master, Oyster perpetual date just."
+                  imgSrc={Apple}
+                />
+              </div>
+              <div className="border-t border-dashed ">
+                <ProductCardTwo
+                  price="200"
+                  title="Omega Sea master, Oyster perpetual date just."
+                  imgSrc={Apple}
+                />
+              </div>
             </div>
-            <div className="px-1">
-              <ProductCardTwo
-                price="200"
-                title="Cosmos Basics Kellogs crunchy nuts
-Double pack"
-                imgSrc={Apple}
-              />
-              <ProductCardTwo
-                price="200"
-                title="Cosmos Basics Kellogs crunchy nuts
-Double pack"
-                imgSrc={Apple}
-              />
-              <ProductCardTwo
-                price="200"
-                title="Cosmos Basics Kellogs crunchy nuts
-Double pack"
-                imgSrc={Apple}
-              />
+            <div className="px-5">
+              <div>
+                <ProductCardTwo
+                  price="200"
+                  title="Omega Sea master, Oyster perpetual date just."
+                  imgSrc={Apple}
+                />
+              </div>
+              <div className="border-t border-dashed ">
+                <ProductCardTwo
+                  price="200"
+                  title="Omega Sea master, Oyster perpetual date just."
+                  imgSrc={Apple}
+                />
+              </div>
+              <div className="border-t border-dashed ">
+                <ProductCardTwo
+                  price="200"
+                  title="Omega Sea master, Oyster perpetual date just."
+                  imgSrc={Apple}
+                />
+              </div>
             </div>
           </Slider>
         </Section>
@@ -1132,12 +1176,26 @@ Double pack"
           </div>
         </Section>
         <Section variant="two" heading="Toys under N 3000">
-          <div className="relative p-3">
-            <button className="absolute bg-[#FFFFFFF0] px-4 py-1 text-xs top-6 left-6 rounded-3xl">
-              Shop now
-            </button>
-            <Image src={ToysBg} alt="" />
-          </div>
+          <Slider className=" mb-10 pt-4 " ref={sliderRef} {...toysSettings}>
+            <div className="relative p-3">
+              <button className="absolute bg-[#FFFFFFF0] px-4 py-1 text-xs top-6 left-6 rounded-3xl">
+                Shop now
+              </button>
+              <Image src={ToysBg} alt="" />
+            </div>
+            <div className="relative p-3">
+              <button className="absolute bg-[#FFFFFFF0] px-4 py-1 text-xs top-6 left-6 rounded-3xl">
+                Shop now
+              </button>
+              <Image src={ToysBg} alt="" />
+            </div>
+            <div className="relative p-3">
+              <button className="absolute bg-[#FFFFFFF0] px-4 py-1 text-xs top-6 left-6 rounded-3xl">
+                Shop now
+              </button>
+              <Image src={ToysBg} alt="" />
+            </div>
+          </Slider>
         </Section>
         <Section
           variant="two"
@@ -1214,19 +1272,19 @@ internationally"
           <div className="grid grid-cols-2 gap-x-4 gap-y-1 mt-2">
             <div>
               <Image className="w-full" src={DepartmentOne} alt="" />
-              <p className="pt-4">Home & kitchen</p>
+              <p className="pt-1">Home & kitchen</p>
             </div>
             <div>
               <Image className="w-full" src={DepartmentTwo} alt="" />
-              <p className="pt-4">Beauty</p>
+              <p className="pt-1">Beauty</p>
             </div>
             <div>
               <Image className="w-full" src={DepartmentThree} alt="" />
-              <p className="pt-4">Groceries</p>
+              <p className="pt-1">Groceries</p>
             </div>
             <div>
               <Image className="w-full" src={DepartmentFour} alt="" />
-              <p className="pt-4">Electronics</p>
+              <p className="pt-1">Electronics</p>
             </div>
             <div>
               <Image className="w-full" src={DepartmentFive} alt="" />
@@ -1237,7 +1295,7 @@ internationally"
               <p className="pt-4">Medical</p>
             </div>
           </div>
-          <h3 className="text-blue-500 mt-2">All Departments</h3>
+          <h3 className="text-blue-500 mt-2 text-center">All Departments</h3>
         </section>
       </main>
     </div>

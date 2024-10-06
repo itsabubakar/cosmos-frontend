@@ -51,7 +51,7 @@ const ProductSliderFIve = ({ autoPlay, imgSrc, title }: Props) => {
               currentIndex === index
                 ? autoPlay
                   ? "bg-yellow-500" // Yellow dot when autoPlay is true
-                  : "bg-[#2B9FE1]" // Black dot when autoPlay is false
+                  : "bg-[#2B9FE1]" // blue dot when autoPlay is false
                 : "bg-white"
             }`}
           />

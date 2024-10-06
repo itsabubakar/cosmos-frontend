@@ -84,3 +84,4 @@ export { default as DepartmentThree } from "./department3.png";
 export { default as DepartmentFour } from "./department4.png";
 export { default as DepartmentFive } from "./department5.png";
 export { default as DepartmentSix } from "./department6.png";
+export { default as PicOne } from "./pic1.png";

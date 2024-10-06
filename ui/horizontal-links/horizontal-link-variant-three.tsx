@@ -37,7 +37,7 @@ const HorizontalLinkVariantThree = ({
           />
         </div>
         <div className="inline-flex items-center gap-x-2">
-          <p className="bg-[#08B02D] w-[58.41px] text-xs text-white inline py-1 rounded-t-sm rounded-bl-sm rounded-br-lg text-center  font-medium mb-2 mt-2 border-b px-1 border-b-[#8F8F8F26]">
+          <p className="bg-[#08B02D] w-[58.41px] text-xs text-white inline py-1 rounded-t-md rounded-bl-md rounded-br-xl full text-center  font-medium mb-2 mt-2 border-b px-1 border-b-[#8F8F8F26]">
             15% off
           </p>
           <p className="text-[#08B02D] text-[13px]">Deal</p>
@@ -64,7 +64,7 @@ const HorizontalLinkVariantThree = ({
         </div>
 
         <div className="inline-flex items-center gap-x-2">
-          <p className="bg-[#08B02D]  w-[65px] text-xs text-white inline p-1 rounded-t-sm rounded-bl-sm rounded-br-lg text-center  font-medium mb-2 mt-2 border-b border-b-[#8F8F8F26]">
+          <p className="bg-[#08B02D]  w-[65px] text-xs text-white inline p-1 rounded-t-md rounded-bl-md rounded-br-xl text-center  font-medium mb-2 mt-2 border-b border-b-[#8F8F8F26]">
             15% off
           </p>
           <p className="text-[#08B02D] text-sm">Deal</p>

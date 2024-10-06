@@ -74,7 +74,7 @@ const ProductSliderThree = ({ imgSrc, productImage }: Props) => {
             {images.map((_, index) => (
               <div
                 key={index}
-                className={`w-5 h-[2px] mx-1 ${
+                className={`w-1 rounded-full h-1 mx-1 ${
                   currentIndex === index
                     ? true
                       ? "bg-black" // Yellow dot when autoPlay is true
