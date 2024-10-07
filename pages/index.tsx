@@ -176,7 +176,7 @@ export default function Home() {
   }) => {
     return (
       <Link
-        className="text-[#000000CC] w-[148px] bg-white/20 backdrop-blur-[8px] rounded-lg inline-block relative mx-1 ml-2"
+        className="text-[#000000CC] w-[148px] bg-white/20 backdrop-blur-[28px] rounded-lg inline-block relative mx-1 ml-2"
         href={link}
       >
         <div className="absolute top-1 right-1 bg-[#FFFFFF33] rounded-full pl-2 pt-2">
@@ -1137,8 +1137,8 @@ history"
               <p className="ml-14 text-green-500">Limited time Deal</p>
             </div>
             <div className="flex items-center gap-x-2">
-              <p className="text-lg font-semibold flex items-start pt-2">
-                <span className="text-xs font-thin pt-[2px]">N</span>160,000
+              <p className="text-lg font-semibold flex gap-x-1 items-start pt-2">
+                <span className="text-xs font-thin pt-[4px]">N</span> 160,000
               </p>
               <p className="text-[10px] pt-2.5">
                 List price: <span className="line-through">N 175, 000</span>
@@ -1175,24 +1175,18 @@ history"
             </div>
           </div>
         </Section>
-        <Section variant="two" heading="Toys under N 3000">
+        <Section className="relative" variant="two" heading="Toys under N 3000">
+          <button className="absolute bg-[#FFFFFFF0] px-4 py-1 text-xs top-20 left-6 rounded-3xl z-10">
+            Shop now
+          </button>
           <Slider className=" mb-10 pt-4 " ref={sliderRef} {...toysSettings}>
-            <div className="relative p-3">
-              <button className="absolute bg-[#FFFFFFF0] px-4 py-1 text-xs top-6 left-6 rounded-3xl">
-                Shop now
-              </button>
+            <div className=" p-3">
               <Image src={ToysBg} alt="" />
             </div>
             <div className="relative p-3">
-              <button className="absolute bg-[#FFFFFFF0] px-4 py-1 text-xs top-6 left-6 rounded-3xl">
-                Shop now
-              </button>
               <Image src={ToysBg} alt="" />
             </div>
             <div className="relative p-3">
-              <button className="absolute bg-[#FFFFFFF0] px-4 py-1 text-xs top-6 left-6 rounded-3xl">
-                Shop now
-              </button>
               <Image src={ToysBg} alt="" />
             </div>
           </Slider>

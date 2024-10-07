@@ -36,7 +36,7 @@ const NavLink = ({
   return (
     <Link
       href={href}
-      className="flex items-center pb-4 gap-x-4 text-gray-700 hover:text-blue-500"
+      className="flex  text-lg items-center pb-4 gap-x-4 text-[#181515] hover:text-blue-500"
     >
       <Image src={icon} alt="Profile" className="w-6 h-6" />
       <span>{text}</span>
@@ -56,7 +56,7 @@ const OnScrollHeader = ({
     <div
       className={`${
         isOpen && "hidden"
-      } fixed top-0 left-0 w-full z-50 bg-white rounded-b-xl py-2 shadow-md flex  items-center px-4`}
+      } fixed top-0 left-0 w-full z-50 bg-[#FFFFFF33] backdrop-blur-[28px] rounded-b-xl py-2 shadow-md flex  items-center px-4`}
     >
       <button onClick={toggleMenu} className="focus:outline-none">
         <Open />
@@ -83,6 +83,21 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [showOnScrollHeader, setShowOnScrollHeader] = useState(false);
+
+  // State to store the vertical position
+  const [topPosition, setTopPosition] = useState(50);
+
+  const handleDragStart = (e) => {
+    e.preventDefault(); // Prevent default link behavior during drag
+  };
+
+  const handleDrag = (e) => {
+    if (e.clientY) {
+      // Calculate the new top position based on the mouse position
+      const newPosition = e.clientY - 60; // Adjust this offset as needed
+      setTopPosition(newPosition);
+    }
+  };
 
   // Track scroll position
   useEffect(() => {
@@ -198,7 +213,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div className={`px-5 pt-4 ${isOpen ? "hidden" : ""}`}>
+        <div className={`px-4 pt-4 ${isOpen ? "hidden" : ""}`}>
           {/* Mobile Menu Icon */}
           <div className="flex justify-between items-center">
             <button onClick={toggleMenu} className="focus:outline-none">
@@ -206,7 +221,7 @@ const Navbar = () => {
             </button>
 
             {/* Search bar */}
-            <div className="rounded-xl bg-white px-4 py-2 shadow-md border flex justify-between items-center w-[286px]">
+            <div className=" rounded-xl bg-white px-4 py-2   flex justify-between items-center w-[286px]">
               <div className="">
                 <Microphone />
               </div>
@@ -265,7 +280,7 @@ const Navbar = () => {
           } overflow-y-auto overflow-x-hidden`} // Changed to min-h-screen here
         >
           <div className="flex flex-col min-h-screen  ">
-            <div className="bg-[#FFFFFF99] px-4 shadow-md rounded-br-full w-4/5 p-4 ">
+            <div className="bg-[#FFFFFF] px-4 shadow-md rounded-br-full w-4/5 p-4 ">
               <div className="flex justify-between">
                 <div>
                   <h2 className="pl-1 font-semibold">Browse</h2>
@@ -288,9 +303,9 @@ const Navbar = () => {
             </div>
             <div className="flex justify-between  px-4  overflow-auto grow">
               <div className="space-y-2 flex flex-col  justify-between scrollbar-none overflow-y-auto">
-                <h3 className="font-semibold mt-5">Trending</h3>
+                <h3 className="font-semibold mt-5 text-xl">Trending</h3>
                 <NavLink text="Movers & shakers" href="/" icon={Ring} />
-                <h3 className="font-semibold pt-2">Top Departments</h3>
+                <h3 className="font-semibold pt-2 text-xl">Top Departments</h3>
 
                 <NavLink text="Home" href="/" icon={Cup} />
                 <NavLink text="Health and household" href="/" icon={Health} />
@@ -353,9 +368,9 @@ const Navbar = () => {
                 {/* Vertical button on the right */}
                 <Link
                   href={"/"}
-                  className="bg-white text-[9px] absolute w-[123px] top-[40%] text-black -rotate-90 px-2 justify-between flex rounded-t-md pb-[68px]"
+                  className="bg-white text-[9px] absolute w-[123px] top-[50%] text-black -rotate-90 px-2 justify-between flex rounded-t-md pb-[68px]"
                 >
-                  <p>MAY I HELP YOU</p>
+                  <p>How MAY I HELP YOU</p>
                   <span className="rotate-90 pt-1">
                     <Care />
                   </span>
