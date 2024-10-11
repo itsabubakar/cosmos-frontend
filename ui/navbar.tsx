@@ -84,21 +84,6 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [showOnScrollHeader, setShowOnScrollHeader] = useState(false);
 
-  // State to store the vertical position
-  const [topPosition, setTopPosition] = useState(50);
-
-  const handleDragStart = (e) => {
-    e.preventDefault(); // Prevent default link behavior during drag
-  };
-
-  const handleDrag = (e) => {
-    if (e.clientY) {
-      // Calculate the new top position based on the mouse position
-      const newPosition = e.clientY - 60; // Adjust this offset as needed
-      setTopPosition(newPosition);
-    }
-  };
-
   // Track scroll position
   useEffect(() => {
     let lastScrollY = window.scrollY;
